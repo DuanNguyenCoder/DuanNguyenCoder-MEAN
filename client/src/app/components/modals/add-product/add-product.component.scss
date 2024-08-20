@@ -1,0 +1,27 @@
+.imgPro i {
+  padding: 2px;
+  border-radius: 2px;
+  top: -3px;
+  color: white;
+  background-color: red;
+  right: 0;
+  position: absolute;
+  user-select: auto;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

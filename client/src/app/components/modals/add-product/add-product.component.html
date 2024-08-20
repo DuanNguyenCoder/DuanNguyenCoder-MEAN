@@ -1,0 +1,197 @@
+<div class="flex relative p-5">
+  <span
+    (click)="close()"
+    class="absolute hover:cursor-pointer top-0 p-2 right-0"
+    ><i class="fa-solid text-red-600 fa-xmark"></i
+  ></span>
+  <form
+    (submit)="submit()"
+    enctype="multipart/form-data"
+    [formGroup]="reactiveForm"
+    class="w-full max-w-lg"
+  >
+    <h1>infomation product</h1>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label
+          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-first-name"
+        >
+          Product Name
+        </label>
+        <input
+          formControlName="name"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          id="grid-first-name"
+          type="text"
+          placeholder="Laptop Asus"
+        />
+        <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+      </div>
+      <div class="w-full md:w-1/2 px-3">
+        <label
+          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-last-name"
+        >
+          Price
+        </label>
+        <input
+          formControlName="price"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-last-name"
+          type="text"
+          placeholder="30.000.000"
+        />
+      </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label
+          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-des"
+        >
+          Description
+        </label>
+
+        <input
+          formControlName="des"
+          class="appearance-none block h-10 w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          type="text"
+          id="grid-password"
+          placeholder="small and useful"
+        />
+        <p class="text-gray-600 text-xs italic">
+          Make it as long and as crazy as you'd like
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-2">
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label
+          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-state"
+        >
+          Category
+        </label>
+        <div class="relative">
+          <select
+            formControlName="cate"
+            class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-state"
+          >
+            <option>New Mexico</option>
+            <option>Missouri</option>
+            <option>Texas</option>
+          </select>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+          >
+            <svg
+              class="fill-current h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <label
+          class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-zip"
+        >
+          Stock
+        </label>
+        <input
+          formControlName="stock"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-zip"
+          type="text"
+          placeholder="100"
+        />
+      </div>
+    </div>
+
+    <!-- upload image -->
+
+    <div class="mb-2">
+      <div>
+        <label for="images" class="block text-sm font-medium text-gray-700"
+          >Select images</label
+        >
+        <input
+          type="file"
+          id="images"
+          formControlName="img"
+          (change)="onFileSelected($event)"
+          multiple
+          class="mt-1 bg-gray-200 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        />
+      </div>
+    </div>
+
+    <!-- upload image -->
+
+    <!-- test image list -->
+
+    <div
+      class="shadow-md mb-2 p-5 flex overflow-x-auto listImg rounded gap-2 w-full"
+    >
+      <div
+        class="min-w-24 relative imgPro rounded ease-in-out hover:cursor-pointer hover:shadow-cyan-500 hover:duration-300 hover:translate-y-[-5px] shadow-lg"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&h=1280&q=80"
+          alt=""
+        />
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div
+        class="min-w-24 relative imgPro rounded ease-in-out hover:cursor-pointer hover:shadow-cyan-500 hover:duration-300 hover:translate-y-[-5px] shadow-lg"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&h=1280&q=80"
+          alt=""
+        />
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div
+        class="min-w-24 relative imgPro rounded ease-in-out hover:cursor-pointer hover:shadow-cyan-500 hover:duration-300 hover:translate-y-[-5px] shadow-lg"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&h=1280&q=80"
+          alt=""
+        />
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div
+        class="min-w-24 relative imgPro rounded ease-in-out hover:cursor-pointer hover:shadow-cyan-500 hover:duration-300 hover:translate-y-[-5px] shadow-lg"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&h=1280&q=80"
+          alt=""
+        />
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+
+    <!-- test image list -->
+    <div class="flex gap-10 mt-10">
+      <button
+        class="!bg-red-400 !font-mono !font-semibold !text-white transition duration-300 hover:translate-y-[-2px]"
+        mat-button
+      >
+        add new
+      </button>
+      <button
+        mat-button
+        class="!bg-green-400 !font-mono !font-semibold !text-white transition duration-300 hover:translate-y-[-2px]"
+      >
+        update
+      </button>
+    </div>
+  </form>
+</div>

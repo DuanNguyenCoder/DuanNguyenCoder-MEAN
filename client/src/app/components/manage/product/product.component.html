@@ -1,0 +1,92 @@
+<div>
+  <h1>list product</h1>
+  <div class="relative overflow-x-auto">
+    <table
+      class="w-full text-sm text-left text-nowrap rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400"
+      >
+        <tr>
+          <th scope="col" class="px-6 py-3">Product ID</th>
+          <th scope="col" class="px-6 py-3">Product Name</th>
+          <th scope="col" class="px-6 py-3">Price</th>
+          <th scope="col" class="px-6 py-3">Stock</th>
+          <th scope="col" class="px-6 py-3">Category</th>
+          <th scope="col" class="px-6 py-3">Description</th>
+          <th scope="col" class="px-6 py-3"></th>
+          <th scope="col" class="px-6 py-3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-white border-b dark:border-gray-200">
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium whitespace-nowrap text-blue-600"
+          >
+            PR012004
+          </th>
+          <td class="px-6 py-3 text-nowrap">ipad think pad</td>
+          <td class="px-6 py-3">$2999</td>
+          <td class="px-6 py-3">300</td>
+          <td class="px-6 py-3">
+            <span
+              class="py-1 text-red-600 hover:cursor-pointer px-3 rounded-md border-red-600 border"
+              >tablet</span
+            >
+          </td>
+          <td class="px-6 py-3">Laptop</td>
+          <td class="px-6 py-3">
+            <span
+              (click)="openModalProduct()"
+              class="py-1 text-white hover:bg-blue-600 duration-300 hover:cursor-pointer hover:shadow-lg px-3 rounded-md bg-blue-500"
+              ><i class="fa-regular mr-2 fa-pen-to-square"></i>edit</span
+            >
+          </td>
+          <td class="px-6 py-3">
+            <span
+              class="py-1 text-white hover:bg-red-600 duration-300 hover:shadow-lg hover:cursor-pointer px-3 rounded-md bg-red-500"
+              ><i class="fa-regular mr-2 fa-trash-can"></i>delete</span
+            >
+          </td>
+        </tr>
+        <tr class="bg-white border-b dark:border-gray-200">
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium whitespace-nowrap text-blue-600"
+          >
+            PR012004
+          </th>
+          <td class="px-6 py-3 text-nowrap">ipad think pad</td>
+          <td class="px-6 py-3">$2999</td>
+          <td class="px-6 py-3">300</td>
+          <td class="px-6 py-3">
+            <span
+              class="py-1 text-red-600 hover:cursor-pointer px-3 rounded-md border-red-600 border"
+              >tablet</span
+            >
+          </td>
+          <td class="px-6 py-3">Laptop</td>
+          <td class="px-6 py-3">
+            <span
+              class="py-1 text-white hover:bg-blue-600 duration-300 hover:cursor-pointer hover:shadow-lg px-3 rounded-md bg-blue-500"
+              ><i class="fa-regular mr-2 fa-pen-to-square"></i>edit</span
+            >
+          </td>
+          <td class="px-6 py-3">
+            <span
+              class="py-1 text-white hover:bg-red-600 duration-300 hover:shadow-lg hover:cursor-pointer px-3 rounded-md bg-red-500"
+              ><i class="fa-regular mr-2 fa-trash-can"></i>delete</span
+            >
+          </td>
+        </tr>
+        <div class="p-2 ml-4 hover:cursor-pointer">
+          <i class="fa-solid text-green-600 fa-plus mr-2"></i>
+          <a (click)="openModalProduct()" class="font-medium text-green-600"
+            >Add New Product</a
+          >
+        </div>
+      </tbody>
+    </table>
+  </div>
+</div>
