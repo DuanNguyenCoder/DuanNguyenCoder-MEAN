@@ -14,7 +14,13 @@ const productController = {
 
   addProduct: async (req, res) => {
     try {
-      const newproduct = await product.create(req.body);
+      imgUrl = `http://localhost:3000/uploads/${req.file.originalname}`;
+
+      const newproduct = await product.create({
+        ...req.body,
+        image: [imgUrl],
+      });
+
       res.json(newproduct);
     } catch (error) {
       console.log(error);
@@ -31,21 +37,24 @@ const productController = {
   },
   updateProduct: async (req, res) => {
     try {
-      const stu = await product.findByIdAndUpdate(req.params.id, req.body);
+      imgUrl = `http://localhost:3000/uploads/${req.file.originalname}`;
+      const productUpdate = { ...res.body, image: [imgUrl] };
+      const stu = await product.findByIdAndUpdate(req.params.id, productUpdate);
       if (!stu) {
         throw new Error("update fail!");
       }
       res.status(200).json({ status: "success", message: "update sucess!" });
     } catch (error) {
-      res.status(400).json({ status: "fail", message: error.message });
+      res.status(400).json({ sztatus: "fail", message: error.message });
     }
   },
 
   deleteProduct: async (req, res) => {
     try {
-      const id = req.params._id;
+      const id = req.params.id;
+      console.log(id);
       await product.findByIdAndDelete(id, req.body);
-      res.json(req.body);
+      res.json({ status: "success", message: "delete success!" });
     } catch (error) {
       console.log(error);
     }

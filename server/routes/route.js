@@ -5,6 +5,18 @@ const auth = require("../controller/authController");
 const midAuthentication = require("../middleware/auth");
 const userController = require("../controller/userController");
 
+// upload file
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: require.main?.path + "/" + "uploads",
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+
 //authentication
 router.get("/login", auth);
 
@@ -16,8 +28,12 @@ router.post("/user", userController.addUser);
 // product routes
 router.get("/product", productController.getProduct);
 router.get("/product/:id", productController.getOne);
-router.post("/product", productController.addProduct);
-router.put("/product/:id", productController.updateProduct);
+router.post("/product", upload.single("image"), productController.addProduct);
+router.put(
+  "/product/:id",
+  upload.single("image"),
+  productController.updateProduct
+);
 router.delete("/product/:id", productController.deleteProduct);
 router.get("/productByCategory/:id", productController.getProductByCategory);
 
