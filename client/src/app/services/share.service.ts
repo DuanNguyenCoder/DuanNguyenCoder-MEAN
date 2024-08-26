@@ -7,5 +7,6 @@ import { BehaviorSubject } from 'rxjs';
 export class ShareService {
   constructor() {}
 
-  theme = new BehaviorSubject<boolean>(false);
+  themeService = new BehaviorSubject<boolean>(false);
+  totalBillService = new BehaviorSubject<number>(0);
 }

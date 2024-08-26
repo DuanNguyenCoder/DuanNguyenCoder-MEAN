@@ -8,6 +8,7 @@ import { AddProductComponent } from './components/modals/add-product/add-product
 import { ListProductComponent } from './components/products/list-product/list-product.component';
 import { ProductComponent } from './components/manage/product/product.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'product', component: ProductComponent },
       { path: '', component: LandingComponent },
       { path: 'phone', component: ListProductComponent },
+      { path: 'cart', component: CartComponent },
     ],
   },
 ];

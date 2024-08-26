@@ -7,7 +7,7 @@
   <app-product></app-product>
 </div> -->
 
-<section class="w-full py-12 sm:py-24 lg:py-32 bg-muted">
+<section class="w-full py-12 sm:py-5 lg:py-8 bg-muted">
   <div class="container px-4 md:px-6">
     <div
       class="flex flex-col items-center justify-center space-y-4 text-center"
@@ -139,12 +139,7 @@
     <div
       class="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 md:grid-cols-3 lg:gap-12"
     >
-      <app-product></app-product>
-      <app-product></app-product>
-      <app-product></app-product>
-      <app-product></app-product>
-      <app-product></app-product>
-      <app-product></app-product>
+      <app-product *ngFor="let i of dataMock" [productData]="i"></app-product>
     </div>
   </div>
 </section>

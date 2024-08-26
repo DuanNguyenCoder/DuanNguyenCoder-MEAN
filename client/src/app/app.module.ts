@@ -23,6 +23,8 @@ import { AddProductComponent } from './components/modals/add-product/add-product
 import { ListProductComponent } from './components/products/list-product/list-product.component';
 import { ProductComponent } from './components/products/product/product.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartItemComponent } from './components/cart/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { LandingComponent } from './components/landing/landing.component';
     HeaderComponent,
     FooterComponent,
     LandingComponent,
+    CartComponent,
+    CartItemComponent,
   ],
   imports: [
     MatListModule,

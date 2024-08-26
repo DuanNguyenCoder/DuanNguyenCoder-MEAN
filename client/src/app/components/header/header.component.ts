@@ -13,13 +13,13 @@ export class HeaderComponent {
   theme!: boolean;
 
   constructor(private themeStatus: ShareService) {
-    this.themeStatus.theme.subscribe((res) => {
+    this.themeStatus.themeService.subscribe((res) => {
       this.theme = res;
       console.log(this.theme);
     });
   }
 
   changeTheme(event: MatSlideToggleChange) {
-    this.themeStatus.theme.next(event.checked);
+    this.themeStatus.themeService.next(event.checked);
   }
 }

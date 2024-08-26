@@ -13,11 +13,9 @@
     />
   </div>
   <div class="p-6 space-y-2">
-    <h3 class="text-xl font-bold">iPhone 14 Pro</h3>
+    <h3 class="text-xl font-bold">{{ productData.name }}</h3>
     <p class="text-gray-700 my-2 text-base">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-      quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-      nihil.
+      {{ productData.des }}
     </p>
     <div class="my-2">
       <span
@@ -34,9 +32,9 @@
       >
     </div>
     <div class="flex items-center my-2 justify-between">
-      <span class="text-lg font-bold">$999</span>
+      <span class="text-lg font-bold">{{ productData.price }}</span>
       <a
-        href="#"
+        (click)="buy()"
         class="inline-flex hover:shadow-lg h-8 items-center justify-center rounded-md bg-slate-900 text-white px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none hover:translate-y-[-1px] duration-200 disabled:pointer-events-none disabled:opacity-50"
       >
         Buy Now
@@ -44,7 +42,3 @@
     </div>
   </div>
 </div>
-
-<h1 *ngFor="let item of productData">
-  {{ item.name }}
-</h1>

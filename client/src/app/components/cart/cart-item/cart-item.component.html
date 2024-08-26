@@ -1,0 +1,44 @@
+<div>
+  <div class="flex items-start space-x-4">
+    <img
+      src="/placeholder.svg"
+      alt="Product"
+      class="w-16 h-16"
+      width="60"
+      height="60"
+      style="aspect-ratio: 60 / 60; object-fit: cover"
+    />
+    <div class="flex-1">
+      <h2 class="text-lg font-bold">
+        {{ cartItem.name }}
+      </h2>
+      <p class="text-sm text-muted-foreground">8 Khuyến mãi</p>
+      <p class="text-sm">Màu: Xám</p>
+    </div>
+    <div class="flex flex-col items-end">
+      <p class="text-red-600 font-bold">{{ cartItem.price }}</p>
+      <p class="text-muted-foreground line-through">43.990.000₫</p>
+    </div>
+  </div>
+  <div class="flex items-center space-x-2">
+    <button
+      (click)="decrease()"
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 p-2"
+    >
+      -
+    </button>
+    <input
+      class="text-center"
+      min="1"
+      max="100"
+      type="number"
+      [value]="cartItem.quantity"
+    />
+    <button
+      (click)="increase()"
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 p-2"
+    >
+      +
+    </button>
+  </div>
+</div>

@@ -1,70 +1,109 @@
-<header
-  [ngClass]="{ 'bg-black': theme == true, 'bg-teal-500': theme == false }"
->
-  <nav Class="flex items-center justify-between flex-wrap py-6 px-6">
-    <div class="flex items-center flex-shrink-0 text-white mr-6">
-      <svg
-        class="fill-current h-8 w-8 mr-2"
-        width="54"
-        height="54"
-        viewBox="0 0 54 54"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"
-        />
-      </svg>
-      <span class="font-semibold text-xl tracking-tight">YODY STORE</span>
-    </div>
-    <div class="block lg:hidden">
-      <button
-        class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
-      >
+<header>
+  <div [ngClass]="{ 'bg-black': theme == true, 'bg-teal-500': theme == false }">
+    <nav Class="flex items-center justify-between flex-wrap py-6 px-6">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
         <svg
-          class="fill-current h-3 w-3"
-          viewBox="0 0 20 20"
+          class="fill-current h-8 w-8 mr-2"
+          width="54"
+          height="54"
+          viewBox="0 0 54 54"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          <path
+            d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"
+          />
         </svg>
-      </button>
-    </div>
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <div class="text-sm lg:flex-grow">
-        <a
-          routerLink="/product"
-          href="#responsive-header"
-          class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-        >
-          Add Product
-        </a>
-        <a
-          href="#responsive-header"
-          class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-        >
-          Examples
-        </a>
-        <a
-          href="#responsive-header"
-          class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
-        >
-          Blog
-        </a>
+        <span class="font-semibold text-xl tracking-tight">YODY STORE</span>
       </div>
-      <p>
-        <mat-slide-toggle (change)="changeTheme($event)"
-          >dark
-        </mat-slide-toggle>
-      </p>
-      <div>
-        <a
-          routerLink="/login"
-          href="#"
-          class="inline-block ml-4 text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
-          >logout</a
+      <div class="block lg:hidden">
+        <button
+          class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
         >
+          <svg
+            class="fill-current h-3 w-3"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
       </div>
-    </div>
-  </nav>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+          <a
+            routerLink="/product"
+            href="#responsive-header"
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+          >
+            Add Product
+          </a>
+          <a
+            href="#responsive-header"
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+          >
+            Examples
+          </a>
+          <a
+            href="#responsive-header"
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+          >
+            Blog
+          </a>
+        </div>
+        <div class="flex gap-3">
+          <p>
+            <mat-slide-toggle (change)="changeTheme($event)"
+              >dark
+            </mat-slide-toggle>
+          </p>
+          <div
+            class="inline-block ml-4 text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+          >
+            <a routerLink="/login" href="#">logout</a>
+          </div>
+          <div
+            class="inline-block ml-4 text-sm px-4 py-2 leading-none border relative before:w-4 before:p-[2px] before:text-center before:h-4 before:bg-red-600 before:absolute before:top-0 before:left-0 before:rounded-full before:content-['4'] after:bg-slate-600 rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+          >
+            <i class="fa-solid mr-3 fa-cart-shopping"></i>
+            <a routerLink="/cart" href="#">cart</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="px-4 lg:px-6 h-14 flex items-center">
+    <nav class="ml-auto flex gap-4 sm:gap-6">
+      <a
+        routerLink="/phone"
+        class="text-sm font-medium hover:underline underline-offset-4"
+        href="#"
+        rel="ugc"
+      >
+        Phones
+      </a>
+      <a
+        class="text-sm font-medium hover:underline underline-offset-4"
+        href="#"
+        rel="ugc"
+      >
+        Accessories
+      </a>
+      <a
+        class="text-sm font-medium hover:underline underline-offset-4"
+        href="#"
+        rel="ugc"
+      >
+        Services
+      </a>
+      <a
+        class="text-sm font-medium hover:underline underline-offset-4"
+        href="#"
+        rel="ugc"
+      >
+        About
+      </a>
+    </nav>
+  </div>
 </header>
