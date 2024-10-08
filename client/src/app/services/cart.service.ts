@@ -6,41 +6,54 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
-  private list: cartItem[] = [];
-  private cartSubject = new BehaviorSubject<cartItem[]>(this.list);
+  // private list: cartItem[] = [];
+  private cartSubject = new BehaviorSubject<cartItem[]>([]);
   private totalPrice = new BehaviorSubject<number>(0);
+  private countItem = new BehaviorSubject<number>(0);
   constructor() {}
 
   getList() {
-    return this.list;
+    return this.cartSubject;
   }
   addItem(product: cartItem) {
-    let index = this.list.findIndex((e) => e._id == product._id);
+    let list = this.cartSubject.value;
+    let index = list.findIndex((e) => e._id == product._id);
     if (index > -1) {
-      this.list[index].quantity += 1;
+      list[index].quantity += 1;
     } else {
-      this.list.push(product);
+      list.push(product);
     }
+    this.countItem.next(this.countItem.value + 1);
     this.calculateTotal();
-    this.cartSubject.next(this.list);
+    this.cartSubject.next(list);
   }
   delItem(product: cartItem) {
-    this.list.filter((e) => {
-      e._id != product._id;
-    });
-    this.cartSubject.next(this.list);
+    console.log(product);
+    let list = this.cartSubject.value;
+    let newList = list.filter((e) => e._id != product._id);
+
+    this.cartSubject.next(newList);
+    this.calculateTotal();
   }
   updateQuantity(productId: string, quantity: number) {
-    let index = this.list.findIndex((e) => e._id == productId);
-    this.list[index].quantity = quantity;
-    this.cartSubject.next(this.list);
+    let list = this.cartSubject.value;
+    let index = list.findIndex((e) => e._id == productId);
+    list[index].quantity = quantity;
+    this.cartSubject.next(list);
   }
   calculateTotal() {
+    let list = this.cartSubject.value;
     this.totalPrice.next(
-      this.list.reduce((total, i) => total + i.price * i.quantity, 0)
+      list.reduce((total, i) => {
+        return total + i.price * i.quantity;
+      }, 0)
     );
   }
   getTotalPrice() {
     return this.totalPrice;
+  }
+
+  getQuantityItem() {
+    return this.countItem;
   }
 }

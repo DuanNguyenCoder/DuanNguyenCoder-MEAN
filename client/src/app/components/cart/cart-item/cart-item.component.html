@@ -1,5 +1,10 @@
 <div>
-  <div class="flex items-start space-x-4">
+  <div class="flex items-start relative space-x-4">
+    <span
+      (click)="delItem()"
+      class="absolute rounded-full w-5 h-5 text-white text-center hover:cursor-pointer hover:shadow-lg bg-red-500 left-0 top-0"
+      ><i class="fa-solid fa-xmark"></i
+    ></span>
     <img
       src="/placeholder.svg"
       alt="Product"

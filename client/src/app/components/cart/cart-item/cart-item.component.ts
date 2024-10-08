@@ -24,4 +24,7 @@ export class CartItemComponent {
     this.cartSer.updateQuantity(this.cartItem._id!, this.cartItem.quantity);
     this.cartSer.calculateTotal();
   }
+  delItem() {
+    this.cartSer.delItem(this.cartItem);
+  }
 }

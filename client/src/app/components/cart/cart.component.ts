@@ -13,7 +13,7 @@ export class CartComponent {
   public cartList!: cartItem[];
 
   constructor(cartSer: CartService) {
-    this.cartList = cartSer.getList();
+    cartSer.getList().subscribe((res) => (this.cartList = res));
 
     cartSer.getTotalPrice().subscribe((value) => (this.totalPrice = value));
   }

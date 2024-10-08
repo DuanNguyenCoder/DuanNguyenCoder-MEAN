@@ -25,6 +25,8 @@ import { ProductComponent } from './components/products/product/product.componen
 import { LandingComponent } from './components/landing/landing.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart/cart-item/cart-item.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { CartItemComponent } from './components/cart/cart-item/cart-item.compone
     AppRoutingModule,
     MatInputModule,
     MatSlideToggleModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
 
   providers: [provideHttpClient()],

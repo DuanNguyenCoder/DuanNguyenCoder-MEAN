@@ -63,8 +63,13 @@
             <a routerLink="/login" href="#">logout</a>
           </div>
           <div
-            class="inline-block ml-4 text-sm px-4 py-2 leading-none border relative before:w-4 before:p-[2px] before:text-center before:h-4 before:bg-red-600 before:absolute before:top-0 before:left-0 before:rounded-full before:content-['4'] after:bg-slate-600 rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+            class="inline-block ml-4 text-sm px-4 py-2 leading-none border relative after:bg-slate-600 rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
           >
+            <span
+              *ngIf="countItemCart != 0"
+              class="w-4 p-[2px] text-center h-4 bg-red-600 absolute top-0 left-0 rounded-full"
+              >{{ countItemCart }}</span
+            >
             <i class="fa-solid mr-3 fa-cart-shopping"></i>
             <a routerLink="/cart" href="#">cart</a>
           </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ShareService } from '../../services/share.service';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,14 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 export class HeaderComponent {
   title = 'client';
 
-  theme!: boolean;
+  public theme!: boolean;
 
-  constructor(private themeStatus: ShareService) {
+  public countItemCart!: number;
+
+  constructor(private themeStatus: ShareService, private cartSer: CartService) {
+    this.cartSer
+      .getQuantityItem()
+      .subscribe((res) => (this.countItemCart = res));
     this.themeStatus.themeService.subscribe((res) => {
       this.theme = res;
       console.log(this.theme);
